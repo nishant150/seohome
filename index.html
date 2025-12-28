@@ -1,1 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEOHome – Digital Marketing Agency</title>
+    <meta name="description" content="Result-driven SEO, PPC & Web Design services. Rank higher, get more leads with ROI-focused digital marketing.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); position: fixed; width: 100%; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.1); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { font-size: 1.8rem; font-weight: 700; color: #1e3a8a; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #1e3a8a; }
+        .cta-btn { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(30,58,138,0.4); }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 150px 0 100px; text-align: center; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1.5rem; }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-secondary { background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.3); padding: 1rem 2rem; border-radius: 50px; color: white; text-decoration: none; font-weight: 500; transition: all 0.3s; }
+        .btn-secondary:hover { background: white; color: #1e3a8a; }
+        
+        /* Trust badges */
+        .trust { background: #f8fafc; padding: 3rem 0; text-align: center; }
+        .trust-badges { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+        .badge { display: flex; align-items: center; gap: 0.5rem; font-weight: 500; color: #1e3a8a; }
+        
+        /* Services */
+        .services { padding: 100px 0; }
+        .section-title { text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; color: #1a1a1a; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .service-card { background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); text-align: center; transition: all 0.3s; border-top: 4px solid transparent; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 30px 80px rgba(0,0,0,0.15); }
+        .service-card i { font-size: 3rem; color: #3b82f6; margin-bottom: 1.5rem; }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #1a1a1a; }
+        
+        /* Testimonials */
+        .testimonials { background: #f8fafc; padding: 100px 0; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .testimonial-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); text-align: center; }
+        .testimonial-text { font-style: italic; margin-bottom: 1.5rem; color: #555; }
+        .testimonial-author { font-weight: 600; color: #1a1a1a; }
+        
+        /* Logos */
+        .logos { padding: 3rem 0; background: white; text-align: center; }
+        .logos-grid { display: flex; justify-content: center; align-items: center; gap: 4rem; flex-wrap: wrap; }
+        .logo-item { opacity: 0.7; transition: opacity 0.3s; max-width: 120px; height: 50px; display: flex; align-items: center; justify-content: center; }
+        .logo-item:hover { opacity: 1; }
+        
+        /* Why Choose */
+        .why-choose { padding: 100px 0; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .why-item { display: flex; align-items: flex-start; gap: 1rem; }
+        .why-item i { font-size: 2rem; color: #3b82f6; margin-top: 0.2rem; flex-shrink: 0; }
+        
+        /* Stats */
+        .stats { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4rem 0; text-align: center; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+        .stat { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .stat-label { font-size: 1.1rem; opacity: 0.9; }
+        
+        /* Pricing */
+        .pricing { padding: 100px 0; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .price-card { background: white; border-radius: 20px; padding: 3rem 2rem; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.1); position: relative; transition: all 0.3s; }
+        .price-card.featured { transform: scale(1.05); box-shadow: 0 30px 80px rgba(59,130,246,0.3); border-top: 4px solid #3b82f6; }
+        .price-card.featured .price-amount { color: #3b82f6; }
+        .price-header { margin-bottom: 2rem; }
+        .price-plan { font-size: 1.3rem; font-weight: 600; color: #666; }
+        .price-amount { font-size: 3.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; }
+        .price-period { color: #666; font-size: 1.1rem; }
+        .price-features { list-style: none; margin: 2rem 0; }
+        .price-features li { padding: 0.8rem 0; border-bottom: 1px solid #eee; }
+        .price-features li:last-child { border-bottom: none; }
+        
+        /* CTA */
+        .cta-section { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; text-align: center; padding: 5rem 0; }
+        .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        
+        /* Footer */
+        footer { background: #1a1a1a; color: white; padding: 4rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer-section h3 { margin-bottom: 1rem; color: #3b82f6; }
+        .footer-section a { color: #ccc; text-decoration: none; display: block; margin-bottom: 0.5rem; transition: color 0.3s; }
+        .footer-section a:hover { color: #3b82f6; }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid #333; color: #666; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .trust-badges, .logos-grid { flex-direction: column; gap: 1rem; }
+            .section-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">SEOHome</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="mailto:info@seohome.in" class="cta-btn">Get Free Audit</a>
+        </nav>
+    </header>
 
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>SEOHome – Digital Marketing Agency</h1>
+            <p>Result-driven SEO, PPC & Web Design services to grow your traffic, leads and revenue. Trusted by businesses worldwide.</p>
+            <div class="hero-buttons">
+                <a href="mailto:info@seohome.in" class="cta-btn">Get Free SEO Audit</a>
+                <a href="tel:+919315391296" class="btn-secondary">Talk to Expert</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust">
+        <div class="container">
+            <div class="trust-badges">
+                <div class="badge"><i class="fas fa-check-circle"></i>Google-Friendly SEO</div>
+                <div class="badge"><i class="fas fa-globe"></i>Serving Global Clients</div>
+                <div class="badge"><i class="fas fa-chart-line"></i>ROI-Focused</div>
+                <div class="badge"><i class="fas fa-headset"></i>24/7 Support</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Full-Service Digital Marketing</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-search"></i>
+                    <h3>SEO Services</h3>
+                    <p>Rank higher on Google with proven SEO strategies. Long-term growth guaranteed.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Local SEO</h3>
+                    <p>Dominate local searches and get more "near me" leads. Perfect for service businesses.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>PPC Management</h3>
+                    <p>High-ROI Google Ads campaigns that deliver qualified leads, not just clicks.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Web Design</h3>
+                    <p>Fast, SEO-optimized websites that convert visitors into customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"SEOHome delivered 3x more leads in just 3 months. Their strategy is data-driven and transparent."</p>
+                    <div class="testimonial-author">- Sarah Johnson, CEO TechStartup</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Best ROI we've seen from any agency. Rankings improved consistently every month."</p>
+                    <div class="testimonial-author">- Raj Patel, Ecommerce Owner</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Professional team with excellent communication. Our local SEO results are outstanding."</p>
+                    <div class="testimonial-author">- Mike Chen, Dental Clinic</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Logos -->
+    <section class="logos">
+        <div class="container">
+            <div class="logos-grid">
+                <div class="logo-item"><i class="fas fa-building" style="font-size: 2rem; color: #333;"></i></div>
+                <div class="logo-item"><i class="fas fa-store" style="font-size: 2rem; color: #333;"></i></div>
+                <div class="logo-item"><i class="fas fa-laptop" style="font-size: 2rem; color: #333;"></i></div>
+                <div class="logo-item"><i class="fas fa-chart-line" style="font-size: 2rem; color: #333;"></i></div>
+                <div class="logo-item"><i class="fas fa-medkit" style="font-size: 2rem; color: #333;"></i></div>
+                <div class="logo-item"><i class="fas fa-home" style="font-size: 2rem; color: #333;"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Businesses Choose SEOHome</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <i class="fas fa-chart-line"></i>
+                    <p><strong>Data-Driven:</strong> Analytics, Search Console & heatmaps for every decision.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-eye"></i>
+                    <p><strong>Transparent:</strong> Live dashboards & monthly reports you can trust.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-users"></i>
+                    <p><strong>Dedicated Team:</strong> Account manager + specialists for your business.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-clock"></i>
+                    <p><strong>24/7 Support:</strong> Global timezone coverage for instant help.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div>
+                    <div class="stat">500+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div>
+                    <div class="stat">10+</div>
+                    <div class="stat-label">Countries Served</div>
+                </div>
+                <div>
+                    <div class="stat">97%</div>
+                    <div class="stat-label">Client Retention</div>
+                </div>
+                <div>
+                    <div class="stat">6+ Months</div>
+                    <div class="stat-label">Avg Project Life</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Flexible Pricing Plans</h2>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="price-header">
+                        <div class="price-plan">Starter</div>
+                        <div class="price-amount">$299</div>
+                        <div class="price-period">/month</div>
+                    </div>
+                    <ul class="price-features">
+                        <li>✓ 10 Target Keywords</li>
+                        <li>✓ On-Page SEO</li>
+                        <li>✓ Monthly Reporting</li>
+                        <li>✓ Basic Support</li>
+                    </ul>
+                    <a href="mailto:info@seohome.in" class="cta-btn">Get Started</a>
+                </div>
+                <div class="price-card featured">
+                    <div class="price-header">
+                        <div class="price-plan">Growth</div>
+                        <div class="price-amount">$599</div>
+                        <div class="price-period">/month</div>
+                    </div>
+                    <ul class="price-features">
+                        <li>✓ 25 Target Keywords</li>
+                        <li>✓ On-Page + Off-Page</li>
+                        <li>✓ Live Dashboard</li>
+                        <li>✓ Dedicated Manager</li>
+                        <li>✓ Content Creation</li>
+                    </ul>
+                    <a href="mailto:info@seohome.in" class="cta-btn">Most Popular</a>
+                </div>
+                <div class="price-card">
+                    <div class="price-header">
+                        <div class="price-plan">Scale</div>
+                        <div class="price-amount">$999</div>
+                        <div class="price-period">/month</div>
+                    </div>
+                    <ul class="price-features">
+                        <li>✓ 50+ Keywords</li>
+                        <li>✓ Full SEO Strategy</li>
+                        <li>✓ PPC Management</li>
+                        <li>✓ Custom Reporting</li>
+                        <li>✓ Priority Support</li>
+                    </ul>
+                    <a href="mailto:info@seohome.in" class="cta-btn">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Grow Your Business?</h2>
+            <p>Get your free SEO audit and growth strategy in 24 hours.</p>
+            <a href="tel:+919315391296" class="cta-btn" style="font-size: 1.2rem; padding: 1.2rem 3rem;">Call Now: +91 9315391296</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>SEOHome</h3>
+                    <p>Digital Marketing Agency delivering ROI-focused SEO, PPC & Web Design services.</p>
+                    <p><strong>H Block, Sector 63</strong><br>Noida 201301, India</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="#">SEO Services</a>
+                    <a href="#">Local SEO</a>
+                    <a href="#">PPC Management</a>
+                    <a href="#">Web Design</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <a href="#">About Us</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@seohome.in">info@seohome.in</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+919315391296">+91 9315391296</a></p>
+                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919315391296" target="_blank">WhatsApp</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SEOHome. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
